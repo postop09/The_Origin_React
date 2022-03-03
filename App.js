@@ -28,11 +28,21 @@ export default function App() {
     setTodoData(newTodoData);
   }, [todoData]);
 
+  const removeList = () => {
+    setTodoData(() => []);
+  }
+
   return (
     <div className='flex items-center justify-center w-screen h-screen bg-blue-100'>
       <div className='w-full p-6 m-4 bg-white rounded shadow lg:w-3/4 lg:max-w-lg'>
         <div className='flex justify-between mb-3'>
-          <h1>할 일 목록</h1>
+          <h1 className='text-4xl font-bold'>To Do List</h1>
+          <button
+            type='button'
+            onClick={removeList}
+            className='border-2 rounded shadow border-red-400 p-4 text-red-400 hover:bg-red-400 hover:text-white'>
+            모두 지우기
+          </button>
         </div>
         <Lists todoData={todoData} setTodoData={setTodoData} handleClick={handleClick}/>
         <Form handleSubmit={handleSubmit} value={value} setValue={setValue}/>
