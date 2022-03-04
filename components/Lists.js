@@ -53,4 +53,3 @@ const Lists = React.memo(({todoData, setTodoData, handleClick}) => {
   )
 })
 export default Lists
-
