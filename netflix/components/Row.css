@@ -1,0 +1,113 @@
+.sec_row {
+  color: white;
+  background-color: #111;
+}
+.sec_row .txt_title {
+  padding-left: 20px;
+  font-size: 34px;
+}
+.sec_row .wrap_slide {
+  position: relative;
+}
+.sec_row .btn_left,
+.sec_row .btn_right {
+  border: none;
+  width: 80px;
+  height: 100%;
+  padding: 20px 0;
+  background: #00000060;
+  transition: all .3s;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 1000;
+}
+.sec_row .btn_left {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.sec_row .btn_right {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+}
+.sec_row .wrap_slide:hover .btn_left,
+.sec_row .wrap_slide:hover .btn_right {
+  opacity: 1;
+}
+.sec_row .img_arrow {
+  transition: all .3s;
+}
+.sec_row .btn_left:hover .img_arrow,
+.sec_row .btn_right:hover .img_arrow {
+  transform: scale(1.5);
+}
+.sec_row .btn_left:hover,
+.sec_row .btn_right:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+.sec_row .img_left {
+  width: 32px;
+  background: transparent;
+}
+.sec_row .img_right {
+  width: 32px;
+  background: transparent;
+}
+.sec_row .wrap_contents {
+  display: flex;
+  padding: 20px 0 20px 20px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+.sec_row .wrap_contents::-webkit-scrollbar {
+  display: none;
+}
+.sec_row .wrap_poster {
+  display: flex;
+  padding: 20px 0;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+.sec_row .img_backDrop {
+  box-shadow: 1px 1px 15px 2px rgb(0, 0, 0, 0.8);
+  border-radius: 4px;
+  width: 100%;
+  max-height: 144px;
+  margin-right: 15px;
+  transition: all .25s;
+}
+.sec_row .img_backDrop:hover {
+  box-shadow: none;
+  transform: scale(1.09);
+}
+.sec_row .img_poster {
+  box-shadow: 1px 1px 15px 2px rgb(0, 0, 0, 0.8);
+  max-height: 320px;
+  margin-right: 20px;
+}
+.sec_row .img_poster:hover {
+  box-shadow: none;
+  transform: scale(1.1);
+}
+
+@media screen and (min-width: 1200px) {
+  .sec_row .img_backDrop {
+    max-height: 160px;
+  }
+  .sec_row .img_poster {
+    max-height: 360px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .sec_row .img_backDrop {
+    max-height: 100px;
+  }
+  .sec_row .img_poster {
+    max-height: 280px;
+  }
+}

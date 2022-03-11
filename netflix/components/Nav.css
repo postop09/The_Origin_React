@@ -1,0 +1,30 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: transparent;
+  transition: all .5s;
+  z-index: 10;
+}
+.header_black {
+  background-color: #111;
+}
+.list_nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 30px;
+  padding: 30px 20px;
+}
+.list_nav button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.img_netflix {
+  width: 100px;
+  height: 30px;
+}
+.img_user {
+  width: 30px;
+}
