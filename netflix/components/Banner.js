@@ -38,7 +38,7 @@ export default function Banner() {
         <div className='wrap_contents'>
           <strong className='txt_title'>{movie.title || movie.original_title || movie.name}</strong>
           <div className='wrap_btn'>
-            <button type='button' className='btn_banner btn_play' onClick={() => setClicked(true)}>play</button>
+            <button type='button' className='btn_banner btn_play' onClick={() => setClicked(true)}>PLAY</button>
             <button type='button' className='btn_banner btn_more'>More Information</button>
           </div>
           <p className='txt_overview'>{movie.overview}</p>

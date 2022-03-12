@@ -21,10 +21,10 @@
   background-color: transparent;
   cursor: pointer;
 }
-.img_netflix {
+.list_nav .img_netflix {
   width: 100px;
   height: 30px;
 }
-.img_user {
+.list_nav .img_user {
   width: 30px;
 }

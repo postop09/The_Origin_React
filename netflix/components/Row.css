@@ -1,4 +1,5 @@
 .sec_row {
+  position: relative;
   color: white;
   background-color: #111;
 }
@@ -67,7 +68,7 @@
 }
 .sec_row .wrap_poster {
   display: flex;
-  padding: 20px 0;
+  padding: 20px 0 20px 20px;
   overflow-y: hidden;
   overflow-x: scroll;
   scroll-behavior: smooth;
@@ -104,8 +105,12 @@
   }
 }
 @media screen and (max-width: 768px) {
+  .sec_row .txt_title {
+    padding-left: 20px;
+    font-size: 34px;
+  }
   .sec_row .img_backDrop {
-    max-height: 100px;
+    height: fit-content;
   }
   .sec_row .img_poster {
     max-height: 280px;
