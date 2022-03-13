@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export default function MovieModal({id, backdrop_path, first_air_date, name, title, vote_average, overview, setModalOpen}) {
+export default function MovieModal({id, backdrop_path, first_air_date, release_date, name, title, vote_average, overview, setModalOpen}) {
   
   return (
     <Modal key={id}>
@@ -9,7 +9,7 @@ export default function MovieModal({id, backdrop_path, first_air_date, name, tit
         <h3 className='txt_hide'>{name || title} 자세히 보기 모달창</h3>
         <ModalImgMovie src={`https://image.tmdb.org/t/p/original/${backdrop_path}`} alt='' />
         <ModalWrapTxt>
-          <ModalTxtDate>출시일: {first_air_date || '정보 없음'}</ModalTxtDate>
+          <ModalTxtDate>출시일: {first_air_date || release_date || '정보 없음'}</ModalTxtDate>
           <ModalTxtTitle>{name || title}</ModalTxtTitle>
           <ModalTxtVote>평점: {vote_average}</ModalTxtVote>
           {overview || '설명 정보 없음'}
@@ -46,12 +46,19 @@ const ModalContainer = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  box-shadow: 1px 1px 15px 2px rgb(0, 0, 0, 0.8);
   border-radius: 5px;
   width: 70vw;
   min-height: 75vh;
   background-color: #111;
+
+  @media screen and (max-width: 768px) {
+    width: 90vw;
+  }
 `
 const ModalImgMovie = styled.img`
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   width: 100%;
   object-fit: cover;
 `
@@ -97,5 +104,10 @@ const ModalBtn = styled.button`
   &:hover {
     background-color: rgb(50, 50, 50);
     color: white;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 7px 10px;
+    font-size: 14px;
   }
 `

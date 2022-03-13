@@ -1,0 +1,18 @@
+.sec_searchMovie {
+  padding: 0 20px;
+  background-color: #111;
+}
+.sec_searchMovie .txt_search {
+  padding: 70px 20px 50px;
+  font-size: 32px;
+  color: white;
+}
+.sec_searchMovie .list_searchMovie{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.sec_searchMovie .img_searchMovie {
+  max-width: 300px;
+  max-height: 400px;
+}
