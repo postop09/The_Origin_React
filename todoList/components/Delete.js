@@ -1,10 +1,9 @@
 import React from 'react'
 
 export default function Delete({setTodoData}) {
-  // 리스트 모두 지우기
+  // 목록 모두 삭제
   const removeList = () => {
     setTodoData([]);
-    // 로컬 스토리지의 기록도 지워져야 함.
     localStorage.removeItem('saveLists');
   }
 

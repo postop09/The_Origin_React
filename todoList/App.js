@@ -1,4 +1,3 @@
-// class 형 리액트
 import React, {useCallback, useEffect, useState} from 'react';
 import './App.css';
 import Delete from './components/Delete';
@@ -10,26 +9,23 @@ export default function App() {
   const [todoData, setTodoData] = useState([]);
   const [value, setValue] = useState('');
   const handleSubmit = (e) => {
-    // 페이지 새로고침을 방지해준다.
     e.preventDefault();
-    // 새로운 할 일 데이터
     let newTodo = {
       id: Date.now(),
       title: value,
       completed: false
     };
-    // 원래 있던 할 일에 새로운 할 일 더해주기
+
     setTodoData((prev) => [...prev, newTodo]);
     setValue('');
   };
 
-  // useCallback 함수를 통해 re-rendering되는 것을 방지할 수 있다.
   const handleClick = useCallback((id) => {
     let newTodoData = todoData.filter(data => data.id !== id);
     setTodoData(newTodoData);
   }, [todoData]);
 
-  // 로컬 스토리지 데이터 불러오기
+  // 로컬 스토리지 데이터 호출
   useEffect(() => {
     if (!localStorage.saveLists === false) {
       const saveData = JSON.parse(localStorage.saveLists);

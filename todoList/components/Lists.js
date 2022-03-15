@@ -1,4 +1,3 @@
-// rafce
 import React from 'react';
 import {DragDropContext, Draggable, Droppable} from 'react-beautiful-dnd';
 import List from './List';
@@ -6,14 +5,10 @@ import List from './List';
 const Lists = React.memo(({todoData, setTodoData, handleClick, value, setValue}) => {
   console.log('Lists rendered');
   const handleEnd = (result) => {
-    // console.log(result);
     if (!result.destination) return;
 
     const newTodoData = todoData;
-    // 1. 변경시키는 아이템을 배열에서 지운다.
-    // 2. return 값으로 지워진 아이템을 잡는다.
     const [reOrderedItem] = newTodoData.splice(result.source.index, 1);
-    // 3. 원하는 자리에 배치시킨다.
     newTodoData.splice(result.destination.index, 0, reOrderedItem);
     setTodoData(newTodoData);
   }
@@ -54,4 +49,4 @@ const Lists = React.memo(({todoData, setTodoData, handleClick, value, setValue})
     </div>
   )
 })
-export default Lists
+export default Lists;
