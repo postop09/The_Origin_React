@@ -1,0 +1,77 @@
+/* 검색 결과 존재 */
+.sec_searchMovie {
+  padding: 80px 20px 50px;
+  background-color: #111;
+}
+.sec_searchMovie .txt_search {
+  padding: 70px 20px 50px;
+  font-size: 1.8rem;
+  color: white;
+}
+.sec_searchMovie .list_searchMovie{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 40px;
+  column-gap: 20px;
+}
+.sec_searchMovie .btn_searchMovie {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.sec_searchMovie .img_searchMovie {
+  border-radius: 5px;
+  width: 300px;
+  height: 450px;
+  transition: all .25s;
+}
+.sec_searchMovie .img_searchMovie:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 1024px) {
+  .sec_searchMovie .list_searchMovie{
+    row-gap: 30px;
+  }
+  .sec_searchMovie .img_searchMovie {
+    width: 200px;
+    height: 300px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .sec_searchMovie {
+    padding: 0 5px;
+  }
+  .sec_searchMovie .list_searchMovie{
+    row-gap: 20px;
+    column-gap: 10px;
+  }
+  .sec_searchMovie .img_searchMovie {
+    width: 100px;
+    height: 150px;
+  }
+}
+
+/* 검색 결과 없음 */
+.sec_searchError {
+  height: 71vh;
+  padding-top: 200px;
+  background-color: #111;
+}
+.sec_searchError .wrap_txtError {
+  width: fit-content;
+  position: relative;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.sec_searchError .txt_searchError {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #5e5e5e;
+}
+.txt_errorGuide {
+  font-size: 1.1rem;
+  color: #5e5e5e;
+}

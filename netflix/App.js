@@ -1,25 +1,31 @@
-import requests from './api/requests';
+import {Outlet, Routes, Route} from 'react-router-dom';
 import './App.css';
-import Banner from './components/Banner';
+import Footer from './components/Footer';
 import Nav from './components/Nav';
-import Row from './components/Row';
+import MainPage from './pages/MainPage';
+import DetailPage from './pages/DetailPage';
+import SearchPage from './pages/SearchPage';
+
+const Layout  = () => {
+  return (
+    <div>
+      <Nav />
+      <Outlet />
+      <Footer />
+    </div>
+  )
+}
 
 function App() {
   return (
     <div>
-      <Nav />
-      <main>
-        <Banner />
-        <Row title='NETFLIX ORIGINALS' id='NO' url={requests.fetchNetflixOriginals} largeRow/>
-        <Row title='Now Playing' id='NP' url={requests.fetchNowPlaying} />
-        <Row title='Trending Now' id='TN' url={requests.fetchTrending} />
-        <Row title='Top Rated' id='TR' url={requests.fetchTopRated} />
-        <Row title='Action Movies' id='AM' url={requests.fetchActionMovies} />
-        <Row title='Comedy Movies' id='CM' url={requests.fetchComedyMovies} />
-        <Row title='Romance Movies' id='RM' url={requests.fetchRomanceMovies} />
-        <Row title='Horror Movies' id='HM' url={requests.fetchHorrorMovies} />
-        <Row title='Documentaries' id='DC' url={requests.fetchDocumentaries} />
-      </main>
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          <Route index element={<MainPage />} />
+          <Route path=':movieId' element={<DetailPage />} />
+          <Route path='search' element={<SearchPage />} />
+        </Route>
+      </Routes>
     </div>
   );
 }

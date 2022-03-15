@@ -28,3 +28,15 @@
 .list_nav .img_user {
   width: 30px;
 }
+.list_nav .item_search {
+  margin: 0 40px 0 auto;
+}
+.list_nav .inp_search {
+  border: none;
+  border-radius: 3px;
+  width: 210px;
+  padding: 5px 0 5px 5px;
+  font-size: 16px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+}

@@ -1,0 +1,26 @@
+.sec_detail {
+  height: 100%;
+  background-color: #111;
+}
+.sec_detail .img_detail {
+  width: 100%;
+}
+.sec_detail .wrap_txtDetail {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  color: white;
+}
+.sec_detail .txt_title {
+  font-size: 30px;
+}
+.sec_detail .txt_tagline {
+  font-size: 24px;
+}
+.sec_detail .txt_date {
+  margin: 10px 0;
+  font-size: 16px;
+}
+.sec_detail .txt_overview {
+  font-size: 18px;
+}
